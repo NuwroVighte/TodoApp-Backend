@@ -1,4 +1,4 @@
-package com.droberts.rest.webservices.restfulwebservices.todo;
+package com.droberts.rest.webservices.restfulwebservices;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

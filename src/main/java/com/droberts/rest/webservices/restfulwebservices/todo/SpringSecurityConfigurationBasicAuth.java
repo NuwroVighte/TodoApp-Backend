@@ -1,4 +1,4 @@
-package com.droberts.rest.webservices.restfulwebservices.basic.auth;
+package com.droberts.rest.webservices.restfulwebservices.todo;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -42,7 +42,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @Configuration
 @EnableWebSecurity
-@CrossOrigin(origins="http://localhost:4200") //prob don't need, take out if errors
+//@CrossOrigin(origins="http://localhost:4200") //prob don't need, take out if errors
 public class SpringSecurityConfigurationBasicAuth extends WebSecurityConfigurerAdapter {
     
     @Override
@@ -64,13 +64,8 @@ public class SpringSecurityConfigurationBasicAuth extends WebSecurityConfigurerA
                 .and()
             //.formLogin().and()
             .httpBasic();
+        System.out.println("actually used the stupid override");
     }
-//    protected void configure(HttpSecurity http) throws Exception {
-//    	http.csrf().disable();
-//    	http.authorizeRequests((requests) -> requests.antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-//    			.anyRequest().authenticated());
-//    	//http.formLogin();
-//    	http.httpBasic();
-//    }
+
     
 }
