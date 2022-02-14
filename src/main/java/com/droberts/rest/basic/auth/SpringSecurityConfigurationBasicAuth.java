@@ -1,4 +1,4 @@
-package com.droberts.rest.webservices.restfulwebservices.todo;
+package com.droberts.rest.basic.auth;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
