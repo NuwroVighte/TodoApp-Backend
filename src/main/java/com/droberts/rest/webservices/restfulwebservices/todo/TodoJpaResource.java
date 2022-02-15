@@ -46,7 +46,7 @@ public class TodoJpaResource {
 	 * Creating content should return a status of created (201) with the URI of the created resource.
 	 * */
 	
-	//edit a todo, use a put
+	//edit a todo
 	@PutMapping("/jpa/users/{username}/todos/{id}")
 	public ResponseEntity<Todo> updateTodo(@PathVariable String username, @PathVariable long id, @RequestBody Todo todo) { //notice ResponseEntity is Todo, not void
 		todo.setUsername(username);
@@ -54,7 +54,7 @@ public class TodoJpaResource {
 		return new ResponseEntity<Todo>(todo, HttpStatus.OK);
 	}
 	
-	//create a todo, use a post
+	//create a todo
 	@PostMapping("/jpa/users/{username}/todos")
 	public ResponseEntity<Void> createTodo(@PathVariable String username, @RequestBody Todo todo) { //notice ResponseEntity is Todo, not void
 		todo.setUsername(username);
@@ -68,8 +68,7 @@ public class TodoJpaResource {
 		return ResponseEntity.created(uri).build();
 	}
 	
-	
-	//delete todo /users/{username}/todos/{id}
+	//delete todo
 	@DeleteMapping("/jpa/users/{username}/todos/{id}")
 	public ResponseEntity<Void> deleteTodo(@PathVariable String username, @PathVariable long id) { //deletes a todo and returns ResponseEntity to show if it's successful or not.
 		todoJpaRepository.deleteById(id);
